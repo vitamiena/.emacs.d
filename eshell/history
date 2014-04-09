@@ -1,0 +1,27 @@
+cd
+ls
+ls -a
+pry
+exit
+cd
+ls ^a
+ls -a
+ls
+ls
+cd
+exit
+ruby .\#ex1401.rb
+ls
+ruby ex1401.rb
+exit
+ruby test.rb 
+ruby test.rb 
+ls /usr/local/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb
+cat /usr/local/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb
+find dbi /
+ruby test.rb 
+ruby test.rb 
+sqlite3 students01.db
+ls
+ruby ex2107.rb 
+ruby ex2107.rb 
