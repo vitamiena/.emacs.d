@@ -138,17 +138,15 @@
 ;; ファイル名の問い合わせで大文字小文字の区別をしない
 (setq read-file-name-completion-ignore-case t)
 
-;;---------------------------------------------------------------------------------
+;;-------------------------------------------------------------------------------
 ;;パッケージ
-;;---------------------------------------------------------------------------------
-(require 'package)
+;;-------------------------------------------------------------------------------
 
+(require 'package)
 ;; MELPAを追加
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-
 ;; Marmaladeを追加
 (add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/"))
-
 ;; 初期化
 (package-initialize)
 
@@ -175,3 +173,6 @@
 
 (require 'recentf-ext)
 (setq recentf-max-saved-items 5000)
+
+(require 'coffee-mode)
+(require 'auto-complete)

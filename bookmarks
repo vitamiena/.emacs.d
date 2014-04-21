@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("lt_requests_controller.rb"
+ (filename . "~/LightningPress/lightningpress/app/controllers/lt_requests_controller.rb")
+ (front-context-string . "ember.all\n  end\n")
+ (rear-context-string . "    @members = M")
+ (position . 161))
+)
