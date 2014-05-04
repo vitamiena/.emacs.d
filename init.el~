@@ -13,7 +13,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
+(set-default-coding-system 'utf-8)
 ;; インデント
 (setq-default tab-width 2) ;; タブ幅
 (setq-default indent-tabs-mode nil) ;; タブを空白に
@@ -42,25 +42,6 @@
  '(transient-mark-mode t)          ; アクティブなリージョンをハイライト
  '(menu-bar-mode nil)              ; メニューバー非表示
  '(tool-bar-mode nil))              ; ツールバー非表示
-;;-------------------------------------------------------------------------------
-
-;;-------------------------------------------------------------------------------
-;;packege.el
-;;-------------------------------------------------------------------------------
-(require 'package)
-;; MELPAを追加
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-;; Marmaladeを追加
-(add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/"))
-;; 初期化
-(package-initialize)
-;;-----------------------------------------------------------------------------------
-
-;;--------------------------------------------------------------------------------
-;; ロードパス
-;;--------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/elisp")
-;;--------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------
 ;; 対応する記号を自動補完
@@ -112,6 +93,12 @@
 (global-set-key "\C-h" 'backward-delete-char)
 ;; C-mで改行とインデント
 (global-set-key "\C-m" 'newline-and-indent)
+
+;;--------------------------------------------------------------------------------
+;; ロードパス
+;;--------------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/elisp")
+;;--------------------------------------------------------------------------------
 
 
 ;;--------------------------------------------------------------------------------
@@ -168,6 +155,18 @@
 ;; ファイル名の問い合わせで大文字小文字の区別をしない
 (setq read-file-name-completion-ignore-case t)
 
+;;-------------------------------------------------------------------------------
+;;packege.el
+;;-------------------------------------------------------------------------------
+
+(require 'package)
+;; MELPAを追加
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+;; Marmaladeを追加
+(add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; 初期化
+(package-initialize)
+
 ;;-------------------------------------------------------------------
 ;;helm
 ;;-------------------------------------------------------------------
@@ -180,7 +179,7 @@
 ;; helm modeでもC-hでバックスペース
 (define-key helm-map (kbd "\C-h") 'delete-backward-char)
 ;; tabでディレクトリ移動
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+(define helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 ;;------------------------------------------------------------------
 
 ;;------------------------------------------------------------------
@@ -192,12 +191,11 @@
 (require 'fuzzy)
 (ac-config-default)
 ;; C-n/C-pで候補選択
-(setq ac-use-menu-map t)
-
+(set ac-use-menu-map t)
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
 (define-key ac-mode-map (kbd "C-;") 'ac-fuzzy-complete)
-(add-to-list 'ac-modes 'slim-mode 'rhtml-mode)
+(add-to-list 'ac-mode 'slim-mode 'rhtml-mode)
 ;;-----------------------------------------------------------------
 
 ;;-----------------------------------------------------------------
