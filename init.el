@@ -213,6 +213,12 @@
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
+;;;; endの自動挿入がうまくいかない...
+(defun ruby-insert-end ()
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
 ;; ruby-block
 (require 'ruby-block)
 (ruby-block-mode t)
