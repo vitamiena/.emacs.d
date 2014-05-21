@@ -4,3 +4,4 @@ elpa/*
 url/*
 bookmarks
 eshell/*
+ac-comphist.dat
