@@ -33,7 +33,9 @@
 ;; rails
 ;;--------------------------------------------------------------------------------
 (depends-on "rhtml-mode")
+(depends-on "slim-mode")
 (depends-on "coffee-mode")
 (depends-on "projectile")
 (depends-on "projectile-rails")
 (depends-on "recentf-ext")
+(depends-on "grizzl")
