@@ -42,6 +42,9 @@
  '(transient-mark-mode t)          ; アクティブなリージョンをハイライト
  '(menu-bar-mode nil)              ; メニューバー非表示
  '(tool-bar-mode nil))              ; ツールバー非表示
+
+;; 行末の空白を保存時に削除
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;;-------------------------------------------------------------------------------
 
 ;;-------------------------------------------------------------------------------
@@ -62,6 +65,7 @@
 ;; ロードパス
 ;;--------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/elisp")
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 ;;--------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------
@@ -231,6 +235,7 @@
 ;; rails 
 ;;-------------------------------------------------------------------
 (require 'rhtml-mode)
+(require 'slim-mode)
 (require 'coffee-mode)
 ;; projective-rails
 (require 'projectile)
@@ -242,3 +247,28 @@
 
 (require 'recentf-ext)
 (setq recentf-max-saved-items 5000)
+
+
+;;
+(defun ruby-mode-set-encoding () ())
+
+;;------------------------------------------------------------------------------------
+;; org-mode
+;;------------------------------------------------------------------------------------
+
+;; org-modeの初期化
+(require 'org-install)
+;; キーバインドの設定
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cr" 'org-remember)
+;; 拡張子がorgのファイルを開いた時，自動的にorg-modeにする
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; org-modeでの強調表示を可能にする
+(add-hook 'org-mode-hook 'turn-on-font-lock)
+;; 見出しの余分な*を消す
+(setq org-hide-leading-stars t)
+;; org-default-notes-fileのディレクトリ
+(setq org-directory "~/org/")
+;; org-default-notes-fileのファイル名
+(setq org-default-notes-file "notes.org")
