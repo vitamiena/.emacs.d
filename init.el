@@ -2,7 +2,7 @@
 ;; 基本設定
 ;;--------------------------------------------------------------------------------
 ;; 行番号を表示
-(global-linum-mode t)   
+(global-linum-mode t)
 (set-face-attribute 'linum nil
                     :foreground "#089"
                     :height 0.9)
@@ -104,6 +104,14 @@
 (smartparens-global-mode t)
 ;;--------------------------------------------------------------------------------
 
+;;--------------------------------------------------------------------------------
+;; メジャーモード
+;;--------------------------------------------------------------------------------
+;; zshrcをsh-modeに
+(setq auto-mode-alist
+      (append '(("zshrc" . sh-mode))
+              auto-mode-alist))
+;;--------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------
 ;; キーバインド
@@ -229,10 +237,15 @@
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-heilight-toggle t)
+;; Ruby デバッガの設定
+(autoload 'rubydb "rubydb3x"
+    "run rubydb on program file in buffer *gud-file*.
+the directory containing file becomes the initial working directory
+and source-file directory for your debugger." t)
 ;;-------------------------------------------------------------------
 
 ;;-------------------------------------------------------------------
-;; rails 
+;; rails
 ;;-------------------------------------------------------------------
 (require 'rhtml-mode)
 (require 'slim-mode)
