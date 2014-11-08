@@ -1,6 +1,7 @@
-;;--------------------------------------------------------------------------------
-;; 基本設定
-;;--------------------------------------------------------------------------------
+;;;--------------------------------------------------------------------------------
+;;; 基本設定
+;;;--------------------------------------------------------------------------------
+
 ;;; 行番号を表示
 (global-linum-mode t)
 (set-face-attribute 'linum nil
@@ -26,7 +27,7 @@
 ;; 対応する括弧を強調
 (show-paren-mode t)
 (set-face-background 'show-paren-match-face nil)       ; 背景色: なし
-(set-face-underline-p 'show-paren-match-face "#C71585") ; 下線色:
+(set-face-underline 'show-paren-match-face "#C71585") ; 下線色:
 (setq show-paren-delay 0) ; 表示までの秒数: 0秒
 ;; 行末の空白を保存時に削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -110,7 +111,7 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (eval-after-load 'flycheck
   '(custom-set-variables
-       '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 ;;--------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------
