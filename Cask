@@ -3,6 +3,31 @@
 (source marmalade)
 
 ;;--------------------------------------------------------------------------------
+;; cask init
+;;--------------------------------------------------------------------------------
+(depends-on "bind-key")
+(depends-on "cask")
+(depends-on "dash")
+(depends-on "drag-stuff")
+(depends-on "exec-path-from-shell")
+(depends-on "expand-region")
+(depends-on "f")
+(depends-on "htmlize")
+(depends-on "idle-highlight-mode")
+(depends-on "magit")
+(depends-on "multiple-cursors")
+(depends-on "nyan-mode")
+(depends-on "pallet")
+(depends-on "popwin")
+(depends-on "prodigy")
+(depends-on "projectile")
+(depends-on "s")
+(depends-on "smex")
+(depends-on "use-package")
+(depends-on "web-mode")
+(depends-on "yasnippet")
+
+;;--------------------------------------------------------------------------------
 ;; package
 ;;--------------------------------------------------------------------------------
 (depends-on "package")
@@ -11,7 +36,6 @@
 ;; 自動挿入
 ;;--------------------------------------------------------------------------------
 (depends-on "smartparens")
-(depends-on "smartparens-config")
 
 ;;--------------------------------------------------------------------------------
 ;; helm
@@ -23,6 +47,13 @@
 ;;--------------------------------------------------------------------------------
 (depends-on "auto-complete")
 (depends-on "fuzzy")
+
+;;--------------------------------------------------------------------------------
+;; syntax-check
+;;--------------------------------------------------------------------------------
+(depends-on "flycheck")
+(depends-on "flycheck-cask")
+(depends-on "flycheck-pos-tip")
 
 ;;--------------------------------------------------------------------------------
 ;; ruby
