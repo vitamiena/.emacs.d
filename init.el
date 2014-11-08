@@ -1,7 +1,7 @@
 ;;--------------------------------------------------------------------------------
 ;; 基本設定
 ;;--------------------------------------------------------------------------------
-;; 行番号を表示
+;;; 行番号を表示
 (global-linum-mode t)
 (set-face-attribute 'linum nil
                     :foreground "#089"
@@ -28,6 +28,8 @@
 (set-face-background 'show-paren-match-face nil)       ; 背景色: なし
 (set-face-underline-p 'show-paren-match-face "#C71585") ; 下線色:
 (setq show-paren-delay 0) ; 表示までの秒数: 0秒
+;; 行末の空白を保存時に削除
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; 自動保存の設定
 (custom-set-variables
  '(auto-save-default nil)          ; 自動保存しない
@@ -42,9 +44,6 @@
  '(transient-mark-mode t)          ; アクティブなリージョンをハイライト
  '(menu-bar-mode nil)              ; メニューバー非表示
  '(tool-bar-mode nil))              ; ツールバー非表示
-
-;; 行末の空白を保存時に削除
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;;-------------------------------------------------------------------------------
 
 ;;-------------------------------------------------------------------------------
@@ -105,11 +104,25 @@
 ;;--------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------
+;; syntax-check
+;;--------------------------------------------------------------------------------
+;; flycheckを使用
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(eval-after-load 'flycheck
+  '(custom-set-variables
+       '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+;;--------------------------------------------------------------------------------
+
+;;--------------------------------------------------------------------------------
 ;; メジャーモード
 ;;--------------------------------------------------------------------------------
 ;; zshrcをsh-modeに
 (setq auto-mode-alist
       (append '(("zshrc" . sh-mode))
+              auto-mode-alist))
+;; caskをemacs-lisp-mode
+(setq auto-mode-alist
+      (append '(("Cask" . emacs-lisp-mode))
               auto-mode-alist))
 ;;--------------------------------------------------------------------------------
 
