@@ -6,7 +6,7 @@
 (set-face-attribute 'linum nil
                     :foreground "#089"
                     :height 0.9)
-(setq linum-format "%2d ")
+(setq linum-format "%3d ")
 ;; 文字コード
 (set-language-environment "japanese")
 (prefer-coding-system 'utf-8)
