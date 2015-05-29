@@ -1,7 +1,7 @@
 ;;--------------------------------------------------------------------------------
 ;; init-loader
 ;;--------------------------------------------------------------------------------
-(require 'init-loader "~/.emacs.d/.cask/24.4.1/elpa/init-loader-20141030.2333/init-loader.el")
+(require 'init-loader "~/.emacs.d/.cask/24.3.1/elpa/init-loader-20141030.2333/init-loader.el")
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/inits")
 ;;--------------------------------------------------------------------------------
