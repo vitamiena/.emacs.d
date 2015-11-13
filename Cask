@@ -14,7 +14,7 @@
 (depends-on "f")
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
-(depends-on "magit")
+;;(depends-on "magit")
 (depends-on "multiple-cursors")
 (depends-on "nyan-mode")
 (depends-on "pallet")
@@ -71,6 +71,7 @@
 (depends-on "web-mode")
 (depends-on "js2-mode")
 (depends-on "coffee-mode")
+(depends-on "emmet-mode")
 ;;--------------------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------------------
