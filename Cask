@@ -90,3 +90,11 @@
 (depends-on "projectile-rails")
 (depends-on "recentf-ext")
 (depends-on "grizzl")
+
+;;--------------------------------------------------------------------------------
+;; rust
+;;--------------------------------------------------------------------------------
+(depends-on "rust-mode")
+(depends-on "cargo")
+(depends-on "toml-mode")
+(depends-on "flycheck-rust")
