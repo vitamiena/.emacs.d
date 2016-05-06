@@ -23,6 +23,8 @@
   (setq tab-width        2) ;; タブのインデント数
 )
 (setq indent-line-function 'indent-relative-maybe)
+;; 自動改行をoffにする
+(setq text-mode-hook 'turn-off-auto-fill)
 ;; 対応する括弧を強調
 (show-paren-mode t)
 (set-face-background 'show-paren-match-face nil)       ; 背景色: なし
