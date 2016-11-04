@@ -1,5 +1,5 @@
 (setq auto-mode-alist
-      (append (list
+      (append (
                '("\\.rs" . rust-mode)
                '("\\.toml" . toml-mode)
                auto-mode-alist)))
